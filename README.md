@@ -195,9 +195,34 @@ _views/welcome.erb_
 ![](https://farm4.staticflickr.com/3871/14400501153_a021563c9f.jpg)
 
 ## <a name="6">Herokuにアップする</a>
+_Gemfile_
+```ruby
+source "https://rubygems.org/"
+ruby "2.1.1"
+# App Stack
+gem "sinatra", "~> 1.4"
 
+group :development do
+  gem "rake", "~> 10.0"
+  gem "minitest", "~> 5.2"
+  gem "rack-test", "~> 0.6"
+end
+```
+_config/initializers/.gitkeep_を追加
+```bash
+$ heroku login
+$ heroku plugins:install git://github.com/ddollar/heroku-config.git
+$ heroku create
+$ heroku addons:add keen
+$ heroku config:push
+$ heroku push heroku master
+$ heroku apps:rename keenio-intro
+$ heroku open
+```
 
 # 参照
 + [Keen IO](https://keen.io/)
 + [Hazel](http://c7.github.io/hazel/)
 + [Getting Started With Javascript](https://keen.io/docs/js-getting-started-guide/)
++ [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
++ [heroku add-ons](https://addons.heroku.com/keen)
