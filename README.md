@@ -17,6 +17,7 @@ Keen IOにサインイン済み
 + [環境設定](#3)
 + [イベント送信](#4)
 + [データ分析と視覚化](#5)
++ [Herokuにアップする](#6)
 
 # 詳細
 ## <a name="1">セットアップ</a>
@@ -192,6 +193,9 @@ _views/welcome.erb_
 ```
 ### 表示イメージ
 ![](https://farm4.staticflickr.com/3871/14400501153_a021563c9f.jpg)
+
+## <a name="6">Herokuにアップする</a>
+
 
 # 参照
 + [Keen IO](https://keen.io/)
