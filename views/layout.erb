@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+  <title>KeenIO入門</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header class="branding">
+      <h1>KeenIO入門</h1>
+    </header>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <footer class="branding">
+      <small>&copy; <%= Time.now.year %></small>
+    </footer>
+  </div>
+
+  <script>
+  var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+
+  // Configure the Keen object with your Project ID and (optional) access keys.
+  Keen.configure({
+      projectId: "<%= ENV['KEEN_PROJECT_ID'] %>",
+      writeKey: "<%= ENV['KEEN_WRITE_KEY'] %>", // required for sending events
+      readKey: "<%= ENV['KEEN_READ_KEY'] %>"    // required for doing analysis
+  });
+  </script>
+  <script src="javascripts/keenio.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+  </script>
+  <!--[if lt IE 7]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+  <![endif]-->
+</body>

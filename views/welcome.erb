@@ -1,0 +1,19 @@
+<h2>サンプル</h2>
+
+<div class="content">
+  <h3>売上推移</h3>
+  <div id="myTotalRevenueLineDiv"></div>
+</div>
+
+<div class="sidebar">
+  <h3>売上トータル</h3>
+  <div id="myTotalRevenueDiv"></div>
+  <h3>システム環境</h3>
+  <ul>
+    <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+    <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+    <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+    <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+  </ul>
+  <a href="http://c7.github.com/hazel/"><img src="/images/hazel_small.png" alt="Hazel" /></a>
+</div>
